@@ -2,9 +2,9 @@
 <head>
 </head>
 <body>
-<!-- SUBSCRIBE TO IRWINTECH ON YOUTUBE HTTPS://YOUTUBE.COM/C/IRWINTECH -->
+<!-- SUBSCRIBE TO Webby'z Cave
 
-<button class="button-16" onclick="myFunction()">Press This For Redirect</button>
+<button class="button-16" onclick="myFunction()">About Blank!</button>
 
 <script>
 function myFunction() {
