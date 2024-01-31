@@ -100,8 +100,8 @@ nav h1 {
 
 }
  
-#games img {    height: 15.6vw;
-    width: 15.6vw;
+#games img {    height: 20vw;
+    width: 20vw;
     border-radius: 1vw;
     margin: .5vw;
     cursor: pointer;
