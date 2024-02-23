@@ -51,3 +51,342 @@
     <script src="/main.js"></script>
   </body>
 </html>
+
+<html lang="en">
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7FN7LEVWXD');
+        </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/ico.ico" type="image/x-icon">
+        <link rel="stylesheet" href="storage/css/settings6.css">
+    
+
+        <meta name="description" content="seraph; an open source unblocked games website hosting 300+ games with rehosting support, custom themes, cloaking, apps + more!">
+        <meta property="og:site_name" content="seraph">
+        <meta property="og:title" content="seraph">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="seraph; an open source unblocked games website hosting 100+ games with downloadable support, a clean and centralised user interface and no iframe embedding">
+
+        <style>
+            button {
+                margin: 2px;
+            }
+        </style>
+        
+  </head>
+  <body>
+
+    <h1>settings</h1>
+    <a href="index.html" style="font-size: 18px;">go to homepage</a>
+    
+    <br>
+    <h2 style="margin: 0;">tab cloak</h2>
+    <p> disguise seraph in plain sight with a tab cloak! </p>
+    <br>
+    <select id="presetSelect">
+        <option value="google">google</option>
+        <option value="googleclassroom">google classroom</option>
+        <option value="googledrive">google drive</option>
+        <option value="chrometab">chrome new tab</option>
+        <option value="gmail">gmail</option>
+
+        <option value="bing">bing</option>
+        <option value="desmos">desmos calculator</option>
+        <option value="wikipedia">wikipedia</option>
+
+
+    </select>
+
+    <button id="saveButton">select preset cloak</button>
+    <button id="resetButton">reset cloak</button>
+    <p id="success" style="display: none;">success message here</p>
+
+    <br>
+    <h2 style="margin: 0;">theme selection</h2>
+    <p> change the overall appearance of the website here! </p>
+    <br>
+    <select id="theme-select">
+        <option value="seraph">seraph</option>
+        <option value="azurite">azurite</option>
+        <option value="retro">retro</option>
+        <option value="cosmic">cosmic</option>
+        <option value="molten">molten</option>
+        <option value="amethyst">amethyst</option>
+        <option value="ethereal">ethereal</option>
+        <option value="subzero">subzero</option>
+        <option value="metro">metro</option>
+        <option value="custom">custom</option>
+    </select>
+
+    <button id="apply-theme">apply theme</button>
+
+    <div id="custom-theme-settings" style="display: none;">
+        <h2>custom theme settings</h2>
+        <div class="theme-property">
+            <label for="background-image">background image url:</label>
+            <input type="text" id="background-image" value="https://raw.githubusercontent.com/a456pur/seraph/main/images/backgrounds/seraph/homebg.png">
+        </div>
+
+        <div class="theme-property">
+            <label for="font-family">font family:</label>
+            <input type="text" id="font-family" value="Ubuntu">
+        </div>
+
+        <div class="theme-property">
+            <label for="text-color">text colour:</label>
+            <input type="color" id="text-color" value="#000000">
+        </div>
+
+        <div class="theme-property">
+            <label for="background-color">background colour:</label>
+            <input type="color" id="background-color">
+        </div>
+
+        <div class="theme-property">
+            <label for="border-color1">border colour:</label>
+            <input type="color" id="border-color1">
+        </div>
+
+        <div class="theme-property">
+            <label for="border-color2">secondary border colour:</label>
+            <input type="color" id="border-color2">
+        </div>
+
+        <div class="theme-property">
+            <label for="hover-color">hover colour:</label>
+            <input type="color" id="hover-color">
+        </div>
+
+        <div class="theme-property">
+            <label for="text-glow">text glow colour:</label>
+            <input type="color" id="text-glow">
+        </div>
+
+        <p style="font-size: 16px;">refresh the page after applying to see changes</p>
+        <button id="apply-custom-theme" style="font-size: 18px;">apply custom theme</button>
+
+        <script src="storage/js/cloak.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                applyStoredTheme();
+                populateCustomThemeSettings();
+            });
+    
+            function applyStoredTheme() {
+                const storedTheme = localStorage.getItem('selectedTheme');
+
+                hideCustomThemeSettings();
+                if (storedTheme === 'custom') {
+                    showCustomThemeSettings();
+                    applyCustomThemeStyles();
+                }
+                applyTheme();
+            }
+    
+            function hideCustomThemeSettings() {
+                const customThemeSettings = document.getElementById('custom-theme-settings');
+                if (customThemeSettings) {
+                    customThemeSettings.style.display = 'none';
+                }
+            }
+    
+            function showCustomThemeSettings() {
+                const customThemeSettings = document.getElementById('custom-theme-settings');
+                if (customThemeSettings) {
+                    customThemeSettings.style.display = 'block';
+                }
+            }
+    
+            function populateCustomThemeSettings() {
+                const customTheme = JSON.parse(localStorage.getItem('customTheme')) || {};
+                document.getElementById('background-image').value = customTheme['background-image'] || 'https://raw.githubusercontent.com/a456pur/seraph/main/images/backgrounds/seraph/homebg.png';
+                document.getElementById('font-family').value = customTheme['font-family'] || 'Ubuntu';
+                document.getElementById('text-color').value = customTheme['text-color'] || '#FFFFFF';
+                document.getElementById('background-color').value = customTheme['background-color'] || 'black';
+                document.getElementById('border-color1').value = customTheme['border-color1'] || '#000000';
+                document.getElementById('border-color2').value = customTheme['border-color2'] || '#FFFFFF';
+                document.getElementById('hover-color').value = customTheme['hover-color'] || '#1a1818';
+                document.getElementById('text-glow').value = customTheme['text-glow'] || '#000000';
+            }
+    
+            function applyCustomThemeStyles() {
+                const customTheme = JSON.parse(localStorage.getItem('customTheme')) || {};
+                const root = document.documentElement;
+
+                const customStyleTag = document.getElementById('custom-theme-style');
+                if (!customStyleTag) {
+                    const styleTag = document.createElement('style');
+                    styleTag.id = 'custom-theme-style';
+                    styleTag.textContent = `
+                        :root {
+                            --background-image: url('${customTheme['background-image'] || ''}');
+                            --font-family: '${customTheme['font-family'] || ''}', sans-serif;
+                            --text-color: ${customTheme['text-color'] || '#fff'};
+                            --background-color: ${customTheme['background-color'] || 'black'};
+                            --border-color1: ${customTheme['border-color1'] || '#aaaaaa'};
+                            --border-color2: ${customTheme['border-color2'] || '#ffffff'};
+                            --hover-color: ${customTheme['hover-color'] || '#1a1818'};
+                            --text-glow: ${customTheme['text-glow'] || '#000000'};
+                        }
+                    `;
+                    document.head.appendChild(styleTag);
+                }
+            }
+
+            function removeCustomThemeStyles() {
+                const customStyleTag = document.getElementById('custom-theme-style');
+                if (customStyleTag) {
+                    customStyleTag.parentNode.removeChild(customStyleTag);
+                }
+            }
+    
+            function applyTheme() {
+                const selectedTheme = document.getElementById('theme-select');
+                if (selectedTheme) {
+                    const themeValue = selectedTheme.value;
+                    document.documentElement.className = `theme-${themeValue}`;
+                    localStorage.setItem('selectedTheme', themeValue);
+
+                    if (themeValue === 'custom') {
+                        applyCustomThemeStyles();
+                        showCustomThemeSettings();
+                    } else {
+                        hideCustomThemeSettings();
+                        removeCustomThemeStyle();
+                    }
+                }
+            }
+
+            function removeCustomThemeStyle() {
+                const customThemeStyle = document.getElementById('custom-theme-style');
+                if (customThemeStyle) {
+                    customThemeStyle.parentNode.removeChild(customThemeStyle);
+                }
+            }
+
+            const storedTheme = localStorage.getItem('selectedTheme');
+            if (storedTheme) {
+                const selectElement = document.getElementById('theme-select');
+                if (selectElement) {
+                    selectElement.value = storedTheme;
+                    applyStoredTheme();
+                }
+            }
+
+            const applyButton = document.getElementById('apply-theme');
+            if (applyButton) {
+                applyButton.addEventListener('click', applyTheme);
+            }
+            
+            const applyCustomButton = document.getElementById('apply-custom-theme');
+            if (applyCustomButton) {
+                applyCustomButton.addEventListener('click', function () {
+                    const customTheme = {
+                        'background-image': document.getElementById('background-image').value,
+                        'font-family': document.getElementById('font-family').value,
+                        'text-color': document.getElementById('text-color').value,
+                        'background-color': document.getElementById('background-color').value,
+                        'border-color1': document.getElementById('border-color1').value,
+                        'border-color2': document.getElementById('border-color2').value,
+                        'hover-color': document.getElementById('hover-color').value,
+                        'text-glow': document.getElementById('text-glow').value,
+                    };
+
+                    localStorage.setItem('customTheme', JSON.stringify(customTheme));
+                    applyCustomThemeStyles();
+
+                    const selectedTheme = document.getElementById('theme-select');
+                    if (selectedTheme.value !== 'custom') {
+                        removeCustomThemeStyles();
+                    }
+                });
+            }
+        </script>
+        
+
+        <script>
+            function setCookie(name, value, options) {
+                options = options || {};
+
+                let expires = options.expires;
+
+                if (typeof expires == "number" && expires) {
+                    const d = new Date();
+                    d.setTime(d.getTime() + expires * 24 * 60 * 60 * 1000);
+                    expires = options.expires = d;
+                }
+
+                if (expires && expires.toUTCString) {
+                    options.expires = expires.toUTCString();
+                }
+
+                value = encodeURIComponent(value);
+
+                let updatedCookie = name + "=" + value;
+
+                for (const propName in options) {
+                    updatedCookie += "; " + propName;
+                    const propValue = options[propName];
+                    if (propValue !== true) {
+                        updatedCookie += "=" + propValue;
+                    }
+                }
+
+                document.cookie = updatedCookie;
+            }
+
+            function getCookie(name) {
+                const matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const presetSelect = document.getElementById("presetSelect");
+                const saveButton = document.getElementById("saveButton");
+                const resetButton = document.getElementById("resetButton");
+                const successMessage = document.getElementById("success");
+
+                const selectedPreset = getCookie("tabCloakPreset");
+                if (selectedPreset) {
+                    presetSelect.value = selectedPreset;
+                }
+
+                saveButton.addEventListener("click", function() {
+                    const selectedValue = presetSelect.value;
+                    successMessage.textContent = "preset chosen! refresh the page to see changes";
+                    setCookie("tabCloakPreset", selectedValue, { expires: 365 });
+
+                    successMessage.style.display = "block";
+                    setTimeout(function() {
+                        successMessage.style.display = "none";
+                    }, 3000);
+                });
+
+                resetButton.addEventListener("click", function() {
+                    deleteCookie("tabCloakPreset");
+                    presetSelect.selectedIndex = 0;
+                    successMessage.textContent = "cloaking reset, refresh the page to see changes";
+                    successMessage.style.display = "block";
+                    setTimeout(function() {
+                        successMessage.style.display = "none";
+                    }, 3000);
+                });
+
+                function deleteCookie(name) {
+                    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                }
+            });
+        </script>
+  </body>
+</html>
