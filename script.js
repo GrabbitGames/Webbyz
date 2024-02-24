@@ -1,13 +1,6 @@
-const input = document.querySelector('input');
-const games = document.querySelectorAll('#games img');
-
-input.addEventListener('input', () => {
-  const searchTerm = input.value.toLowerCase();
-  games.forEach(game => {
-    if (game.alt.toLowerCase().includes(searchTerm)) {
-      game.style.display = 'block';
-    } else {
-      game.style.display = 'none';
-    }
-  });
-});
+setTimeout(function() {
+    document.getElementById('loader').classList.add('hide');
+    setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+    }, 100);
+}, 2000);
