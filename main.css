@@ -78,17 +78,18 @@ nav h1 {
 }
  
 .search button {
-    background-color: #222222;
-    border: none;
-    border-radius: 0 1vw 1vw 0;
-    color:#FFFF00;
-    font-size: 1.5vw;
-    font-weight: 600;
-    padding: 0.8vw 1vw;
+ 
+    border-radius: 20px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-    transition: .3s all ease;
+    background-color: #b625cc;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
 }
  
 #games {
