@@ -100,8 +100,8 @@ nav h1 {
 
 }
  
-#games img {    height: 10vw;
-    width: 10vw;
+#games img {    height: 5vw;
+    width: 5vw;
     border-radius: 1vw;
     margin: .5vw;
     cursor: pointer;
@@ -111,7 +111,7 @@ nav h1 {
  
 #games img:hover {
     cursor: pointer;
-    transform: rotate(-10deg) scale(1.3);
+    transform: rotate(-15deg) scale(1.3);
     box-shadow: 0 0 1vw #181818;
 
 }
