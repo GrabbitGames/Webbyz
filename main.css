@@ -141,8 +141,8 @@ nav h1 {
 }
 
 .featured img {
-    height: 12.5vw;
-    width: 12.5vw;
+    height: 10vw;
+    width: 10vw;
     border-radius: 1vw;
     margin: .5vw;
     cursor: pointer;
@@ -152,7 +152,7 @@ nav h1 {
 
 .featured img:hover {
     cursor: pointer;
-    transform: rotate(-10deg) scale(1.3);
+    transform: rotate(-15deg) scale(1.3);
     box-shadow: 0 0 1vw #181818;
     filter: brightness(50%);
 }
