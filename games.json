@@ -2,7 +2,7 @@
 
       {
     "name": "Deal or No Deal",
-    "image": "cover.svg",
+    "image": "/images/Axis.png",
     "directory": "deal",
     "recommended": "1"
   },
