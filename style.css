@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 
-
-* {
-  transition-duration: 0.5s;
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-  align-content: center;
-  text-align: center;
-  font-family: 'Prompt', sans-serif;
-  color: var(--textcolor);
 }
 body {
   margin: 0;
