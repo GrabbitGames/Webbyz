@@ -1,97 +1,123 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unblocked Games</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .game-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .game-list li {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-list li:hover {
+            background-color: #f5f5f5;
+        }
+
+        .game-list li a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Unblocked Games</h1>
     </header>
-    <center><input type="text" id="searchInput" placeholder="Search games..."></center>
-    <main>
-        <section class="category">
-            <h2>Action Games</h2>
-            <div class="game-list">
-                <div class="game">
-                    <a href="#">Game 1</a>
-                </div>
-                <div class="game">
-                    <a href="#">Game 2</a>
-                </div>
-                <div class="game">
-                    <a href="#">Game 3</a>
-                </div>
-            </div>
-        </section>
-        <section class="category">
-            <h2>Puzzle Games</h2>
-            <div class="game-list">
-                <div class="game">
-                    <a href="#">Game 4</a>
-                </div>
-                <div class="game">
-                    <a href="#">Game 5</a>
-                </div>
-                <div class="game">
-                    <a href="#">Game 6</a>
-                </div>
-            </div>
-        </section>
-        <section class="category">
-            <h2>Sports Games</h2>
-            <div class="game-list">
-                <div class="game">
-                    <a href="#">Game 7</a>
-                </div>
-                <div class="game">
-                    <a href="#">Game 8</a>
-                </div>
-                <div class="game">
-                    <a href="#">Game 9</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Unblocked Games</p>
-    </footer>
-</body>
+    <div class="container">
+        <form id="searchForm">
+            <input type="text" id="searchInput" name="search" placeholder="Search for games...">
+            <input type="submit" value="Search">
+        </form>
+        <ul class="game-list" id="gameList">
+            <li><a href="#">Game 1</a></li>
+            <li><a href="#">Game 2</a></li>
+            <li><a href="#">Game 3</a></li>
+            <!-- Add more game items as needed -->
+        </ul>
+    </div>
+
     <script>
-        // Get the search input element
-const searchInput = document.getElementById('searchInput');
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-// Add event listener for keyup event on search input
-searchInput.addEventListener('keyup', function() {
-    // Get the value of the search input
-    const searchText = this.value.toLowerCase();
-    
-    // Get all category headings
-    const categoryHeadings = document.querySelectorAll('.category h2');
-    
-    // Loop through each category
-    categoryHeadings.forEach(heading => {
-        // Get the game list associated with the category
-        const gameList = heading.nextElementSibling.querySelectorAll('.game');
-        
-        // Loop through each game in the game list
-        gameList.forEach(game => {
-            // Get the game title
-            const gameTitle = game.querySelector('a').textContent.toLowerCase();
-            
-            // Check if the game title contains the search text
-            if (gameTitle.includes(searchText)) {
-                // If it does, display the game
-                game.style.display = 'block';
-            } else {
-                // Otherwise, hide the game
-                game.style.display = 'none';
-            }
+            // Get the search query
+            var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+
+            // Get all game items
+            var gameItems = document.querySelectorAll('.game-list li');
+
+            // Loop through each game item
+            gameItems.forEach(function(item) {
+                var gameTitle = item.textContent.toLowerCase(); // Get the game title
+
+                // Check if the game title contains the search query
+                if (gameTitle.includes(searchQuery)) {
+                    item.style.display = 'block'; // Show the game item
+                } else {
+                    item.style.display = 'none'; // Hide the game item
+                }
+            });
         });
-    });
-});
-
     </script>
+</body>
 </html>
