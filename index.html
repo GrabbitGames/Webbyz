@@ -21,6 +21,43 @@
   <link rel="shortcut icon" type="image/png" href="favicon.ico">
   <link rel="icon" type="image/png" href="/images/logo.png">
 	<style>
+	.container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .gameimg {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .gameimg:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            }
+
+            img {
+                border-radius: 10px;
+                width: 100px;
+                height: auto;
+            }
+
+            p {
+                text-align: center;
+                color: #50a6fd;
+                font-weight: bold;
+                margin-top: 10px;
+            }	
 	#loader {
     position: fixed;
     top: 0;
