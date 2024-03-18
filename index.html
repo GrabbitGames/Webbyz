@@ -59,4 +59,39 @@
         <p>&copy; 2024 Unblocked Games</p>
     </footer>
 </body>
+    <script>
+        // Get the search input element
+const searchInput = document.getElementById('searchInput');
+
+// Add event listener for keyup event on search input
+searchInput.addEventListener('keyup', function() {
+    // Get the value of the search input
+    const searchText = this.value.toLowerCase();
+    
+    // Get all category headings
+    const categoryHeadings = document.querySelectorAll('.category h2');
+    
+    // Loop through each category
+    categoryHeadings.forEach(heading => {
+        // Get the game list associated with the category
+        const gameList = heading.nextElementSibling.querySelectorAll('.game');
+        
+        // Loop through each game in the game list
+        gameList.forEach(game => {
+            // Get the game title
+            const gameTitle = game.querySelector('a').textContent.toLowerCase();
+            
+            // Check if the game title contains the search text
+            if (gameTitle.includes(searchText)) {
+                // If it does, display the game
+                game.style.display = 'block';
+            } else {
+                // Otherwise, hide the game
+                game.style.display = 'none';
+            }
+        });
+    });
+});
+
+    </script>
 </html>
