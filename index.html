@@ -4,158 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unblocked Games</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f1f1f1;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        .game-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .game-item {
-            width: calc(33.33% - 20px);
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .game-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .game-thumbnail {
-            width: 100%;
-            height: 200px;
-            background-color: #ccc;
-            background-image: url('game-thumbnail.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .game-details {
-            padding: 20px;
-        }
-
-        .game-title {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .game-description {
-            margin-top: 10px;
-            color: #666;
-        }
-
-        .game-link {
-            display: block;
-            padding: 10px;
-            text-align: center;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 0 0 10px 10px;
-            transition: background-color 0.3s;
-        }
-
-        .game-link:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Unblocked Games</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <form id="searchForm">
-            <input type="text" id="searchInput" name="search" placeholder="Search for games...">
-        </form>
-        <ul class="game-list" id="gameList">
-            <li class="game-item">
-                <div class="game-thumbnail"></div>
-                <div class="game-details">
-                    <h2 class="game-title">Game Title</h2>
-                    <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod turpis nec enim posuere, et convallis dui rhoncus.</p>
-                    <a href="#" class="game-link">Play Now</a>
-                </div>
-            </li>
-            <!-- Add more game items as needed -->
-        </ul>
-    </div>
 
-    <script>
-      function search() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('searchInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("searchResults");
-    li = ul.getElementsByTagName('li');
+    <main>
+        <section class="game-list">
+            <h2>Featured Games</h2>
+            <div class="game">
+                <iframe src="game_url_here" frameborder="0"></iframe>
+            </div>
+            <!-- Add more games here -->
+        </section>
+    </main>
 
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
+    <footer>
+        <p>&copy; 2024 Unblocked Games. All rights reserved.</p>
+    </footer>
+</body>
+    <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-    </script>
-</body>
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.game-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.game {
+    margin-bottom: 20px;
+}
+
+.game iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}</style>
 </html>
