@@ -138,27 +138,24 @@
     </div>
 
     <script>
-        document.getElementById('searchForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+      function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("searchResults");
+    li = ul.getElementsByTagName('li');
 
-            // Get the search query
-            var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
 
-            // Get all game items
-            var gameItems = document.querySelectorAll('.game-item');
-
-            // Loop through each game item
-            gameItems.forEach(function(item) {
-                var gameTitle = item.querySelector('.game-title').textContent.toLowerCase(); // Get the game title
-
-                // Check if the game title contains the search query
-                if (gameTitle.includes(searchQuery)) {
-                    item.style.display = 'block'; // Show the game item
-                } else {
-                    item.style.display = 'none'; // Hide the game item
-                }
-            });
-        });
     </script>
 </body>
 </html>
