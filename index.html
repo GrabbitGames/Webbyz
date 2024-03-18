@@ -58,23 +58,61 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        .game-list li {
+        .game-item {
+            width: calc(33.33% - 20px);
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .game-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 200px;
+            background-color: #ccc;
+            background-image: url('game-thumbnail.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .game-details {
+            padding: 20px;
+        }
+
+        .game-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .game-description {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .game-link {
+            display: block;
             padding: 10px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .game-list li:hover {
-            background-color: #f5f5f5;
-        }
-
-        .game-list li a {
-            color: #333;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
             text-decoration: none;
+            border-radius: 0 0 10px 10px;
+            transition: background-color 0.3s;
+        }
+
+        .game-link:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -88,9 +126,14 @@
             <input type="submit" value="Search">
         </form>
         <ul class="game-list" id="gameList">
-            <li><a href="#">Game 1</a></li>
-            <li><a href="#">Game 2</a></li>
-            <li><a href="#">Game 3</a></li>
+            <li class="game-item">
+                <div class="game-thumbnail"></div>
+                <div class="game-details">
+                    <h2 class="game-title">Game Title</h2>
+                    <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod turpis nec enim posuere, et convallis dui rhoncus.</p>
+                    <a href="#" class="game-link">Play Now</a>
+                </div>
+            </li>
             <!-- Add more game items as needed -->
         </ul>
     </div>
@@ -103,11 +146,11 @@
             var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
             // Get all game items
-            var gameItems = document.querySelectorAll('.game-list li');
+            var gameItems = document.querySelectorAll('.game-item');
 
             // Loop through each game item
             gameItems.forEach(function(item) {
-                var gameTitle = item.textContent.toLowerCase(); // Get the game title
+                var gameTitle = item.querySelector('.game-title').textContent.toLowerCase(); // Get the game title
 
                 // Check if the game title contains the search query
                 if (gameTitle.includes(searchQuery)) {
