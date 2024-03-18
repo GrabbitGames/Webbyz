@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Dummy data for game thumbnails
     const gamesData = [
-        { title: "Game 1", imageUrl: "game1.jpg", link: "#" },
+        { title: "Game 1", imageUrl: "game1.jpg", link: "/games/Axis/
+" },
         { title: "Game 2", imageUrl: "game2.jpg", link: "#" },
         { title: "Game 3", imageUrl: "game3.jpg", link: "#" },
         // Add more games as needed
