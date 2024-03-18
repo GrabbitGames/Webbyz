@@ -1,36 +1,438 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Unblocked Games!</h1>
-    </header>
-    <main>
-        <section id="game-list">
-            <div class="game-container">
-                <h2 class="game-title">Game 1</h2>
-                <img class="game-image" src="game1.jpg" alt="Game 1">
-                <p class="game-description">Description for Game 1</p>
+<html>
+    <head>
+        <title>UC - Games</title>
+
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(to top right, #3498db, #e74c3c);
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .gameimg {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .gameimg:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            }
+
+            img {
+                border-radius: 10px;
+                width: 100px;
+                height: auto;
+            }
+
+            p {
+                text-align: center;
+                color: #50a6fd;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+
+            .navbar {
+                background-color: rgba(0, 0, 0, 0.7);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                z-index: 1000;
+            }
+
+            .navbar-text {
+                font-size: 20px;
+                color: #ecf0f1;
+                margin: 0;
+            }
+
+            .navbar-links {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navbar-links li {
+                display: inline;
+                margin-right: 10px;
+            }
+
+            .navbar-links a {
+                font-size: 18px;
+                color: #ecf0f1;
+                text-decoration: none;
+                padding: 10px 20px;
+                margin: 0 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            .navbar-links a:hover {
+                background-color: #219d50;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <p class="navbar-text">UC/Unblocked Cave</p>
+            <ul class="navbar-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/games/games.html">Games</a></li>
+                <li><a href="/emulator/emulator.html">Emulator</a></li>
+                <li><a href="/extra/extra.html">Extra</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="gameimg">
+                <a href="games/1v1.lol/index.html">
+                    <img loading="lazy" src="images/1v1-lol.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">1v1.lol</p>
             </div>
-            <div class="game-container">
-                <h2 class="game-title">Game 2</h2>
-                <img class="game-image" src="game2.jpg" alt="Game 2">
-                <p class="game-description">Description for Game 2</p>
+            <div class="gameimg">
+                <a href="games/ADanceOfFireAndIce/index.html">
+                    <img loading="lazy" src="images/ADanceOfFireAndIce.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">A Dance of Fire and Ice</p>
             </div>
-            <div class="game-container">
-                <h2 class="game-title">Game 3</h2>
-                <img class="game-image" src="game3.jpg" alt="Game 3">
-                <p class="game-description">Description for Game 3</p>
+            <div class="gameimg">
+                <a href="games/AgesOfConflict/index.html">
+                    <img loading="lazy" src="images/AgesOfConflict.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Ages of Conflict</p>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2023 Unblocked Games. All rights reserved.</p>
-    </footer>
-</body>
+            <div class="gameimg">
+                <a href="games/AmongUs/index.html">
+                    <img loading="lazy" src="images/AmongUs.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Among Us</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Backrooms/index.html">
+                    <img loading="lazy" src="images/Backrooms.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Backrooms</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/BasketballStars/index.html">
+                    <img loading="lazy" src="images/BasketballStars.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Basketball Stars</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/BasketBros/index.html">
+                    <img loading="lazy" src="images/BasketBros.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Basket Bros</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/BasketRandom/index.html">
+                    <img loading="lazy" src="images/BasketRandom.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Basket Random</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Bitlife/index.html">
+                    <img loading="lazy" src="images/Bitlife.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Bitlife</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/BoxingRandom/index.html">
+                    <img loading="lazy" src="images/BoxingRandom.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Boxing Random</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Celeste/celeste.html">
+                    <img loading="lazy" src="images/Celeste.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Celeste Classic</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/CelestePracticeMod/index.html">
+                    <img loading="lazy" src="images/CelestePracticeMod.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Celeste Classic Practice Mod</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/CookieClicker/index.html">
+                    <img loading="lazy" src="images/CookieClicker.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Cookie Clicker</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/DogeMiner/index.html">
+                    <img loading="lazy" src="images/DogeMiner.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Doge Miner</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/DriftBoss/index.html">
+                    <img loading="lazy" src="images/DriftBoss.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Drift Boss</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/DuckLife1/index.html">
+                    <img loading="lazy" src="images/DuckLife1.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Duck Life</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/DuckLife2/index.html">
+                    <img loading="lazy" src="images/DuckLife2.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Duck Life 2</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/DuckLife3/index.html">
+                    <img loading="lazy" src="images/DuckLife3.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Duck Life 3</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/DuckLife4/index.html">
+                    <img loading="lazy" src="images/DuckLife4.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Duck Life 4</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Eaglercraft/index.html">
+                    <img loading="lazy" src="images/Eaglercraft.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Eaglercraft</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FireboyAndWatergirl/index.html">
+                    <img loading="lazy" src="images/FireboyAndWatergirl.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Fireboy and Watergirl</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FireboyAndWatergirl2/index.html">
+                    <img loading="lazy" src="images/FireboyAndWatergirl2.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Fireboy and Watergirl 2</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FireboyAndWatergirl3/index.html">
+                    <img loading="lazy" src="images/FireboyAndWatergirl3.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Fireboy and Watergirl 3</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FireboyAndWatergirl4/index.html">
+                    <img loading="lazy" src="images/FireboyAndWatergirl4.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Fireboy and Watergirl 4</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FNF/index.html">
+                    <img loading="lazy" src="images/FNF.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Friday Night Funkin'</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FunnyShooter/index.html">
+                    <img loading="lazy" src="images/FunnyShooter.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Funny Shooter</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/FunnyShooter2/index.html">
+                    <img loading="lazy" src="images/FunnyShooter2.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Funny Shooter 2</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/GrindCraft/index.html">
+                    <img loading="lazy" src="images/GrindCraft.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">GrindCraft</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/HackerTyper/index.html">
+                    <img loading="lazy" src="images/HackerTyper.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Hacker Typer</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/JetpackJoyride/index.html">
+                    <img loading="lazy" src="images/JetpackJoyride.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Jetpack Joyride</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/KitchenGun/index.html">
+                    <img loading="lazy" src="images/KitchenGun.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Kitchen Gun</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/LittleAlchemy/index.html">
+                    <img loading="lazy" src="images/LittleAlchemy.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Little Alchemy</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/MajorasMask/index.html">
+                    <img loading="lazy" src="images/MajorasMask.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">The Legend Of Zelda: Majoras Mask</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/MarioKart64/index.html">
+                    <img loading="lazy" src="images/MarioKart64.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Mario Kart 64</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/MonkeyMart/index.html">
+                    <img loading="lazy" src="images/MonkeyMart.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Monkey Mart</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/OcarinaOfTime/index.html">
+                    <img loading="lazy" src="images/OcarinaOfTime.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">The Legend of Zelda: Ocarina of Time</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/PaperIo2/index.html">
+                    <img loading="lazy" src="images/PaperIo2.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Paper.io 2</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/PokemonEmerald/index.html">
+                    <img loading="lazy" src="images/PokemonEmerald.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Pokemon Emerald</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/PokemonRed/index.html">
+                    <img loading="lazy" src="images/PokemonRed.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Pokemon Red</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Retrobowl/index.html">
+                    <img loading="lazy" src="images/Retrobowl.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Retrobowl</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/RooftopSnipers/index.html">
+                    <img loading="lazy" src="images/RooftopSnipers.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Rooftop Snipers</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/RooftopSnipers2/index.html">
+                    <img loading="lazy" src="images/RooftopSnipers2.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Rooftop Snipers 2</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Sandboxels/index.html">
+                    <img loading="lazy" src="images/Sandboxels.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Sandboxels</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/SansFight/index.html">
+                    <img loading="lazy" src="images/SansFight.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">SansFight</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Slope/index.html">
+                    <img loading="lazy" src="images/Slope.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Slope</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Slope2/index.html">
+                    <img loading="lazy" src="images/Slope2.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Slope 2</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/SM64/index.html">
+                    <img loading="lazy" src="images/SM64.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Super Mario 64</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/SoccerRandom/index.html">
+                    <img loading="lazy" src="images/SoccerRandom.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Soccer Random</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/SubwaySurfers/index.html">
+                    <img loading="lazy" src="images/SubwaySurfers.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Subway Surfers</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/Superhot/index.html">
+                    <img loading="lazy" src="images/Superhot.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Superhot</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/TunnelRush/index.html">
+                    <img loading="lazy" src="images/TunnelRush.png" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">Tunnel Rush</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/WorldsHardestGame/index.html">
+                    <img loading="lazy" src="images/WorldsHardestGame.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">The Worlds Hardest Game 1.0</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/WorldsHardestGame2/index.html">
+                    <img loading="lazy" src="images/WorldsHardestGame2.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">The Worlds Hardest Game 2.0</p>
+            </div>
+            <div class="gameimg">
+                <a href="games/YoHoHo.io/index.html">
+                    <img loading="lazy" src="images/YoHoHo.jpg" />
+                </a>
+                <p style="text-align: center; color: #00c050; font-weight: bold;">YoHoHo.io</p>
+            </div>
+        </div>
+    </body>
 </html>
